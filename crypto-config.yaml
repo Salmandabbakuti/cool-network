@@ -1,0 +1,28 @@
+OrdererOrgs:
+  - Name: OrderingService
+    Domain: cool-network.com
+    Specs:
+      - Hostname: orderer
+
+PeerOrgs:
+  - Name: Microsoft
+    Domain: microsoft.cool-network.com
+    EnableNodeOUs: true
+    Template:
+      Count: 2
+    Users: 
+      Count: 1
+  - Name: Apple
+    Domain: apple.cool-network.com
+    EnableNodeOUs: true
+    Template:
+      Count: 2
+    Users: 
+      Count: 1
+  - Name: IBM
+    Domain: ibm.cool-network.com
+    EnableNodeOUs: true
+    Template:
+      Count: 2
+    Users:
+      Count: 1

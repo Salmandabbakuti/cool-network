@@ -1,0 +1,93 @@
+Organizations:
+
+  - &OrdererOrg
+    Name: OrderingService
+    ID: OrdererMSP
+    MSPDir: crypto-config/ordererOrganizations/cool-network.com/msp
+
+  - &Microsoft
+    Name: MicrosoftMSP
+    ID: MicrosoftMSP
+    MSPDir: crypto-config/peerOrganizations/microsoft.cool-network.com/msp
+    AnchorPeers:
+      - Host: peer0.microsoft.cool-network.com
+        Port: 7051
+
+  - &Apple
+    Name: AppleMSP
+    ID: AppleMSP
+    MSPDir: crypto-config/peerOrganizations/apple.cool-network.com/msp
+    AnchorPeers:
+      - Host: peer0.apple.cool-network.com
+        Port: 7051
+
+  - &IBM
+    Name: IBMMSP
+    ID: IBMMSP
+    MSPDir: crypto-config/peerOrganizations/ibm.cool-network.com/msp
+    AnchorPeers:
+      - Host: peer0.ibm.cool-network.com
+        Port: 7051
+
+# Orderer
+
+Orderer: &OrdererDefaults
+
+  OrdererType: solo
+  Addresses: 
+    - orderer.cool-network.com:7050
+  BatchTimeout: 2s
+  BatchSize:
+    MaxMessageCount: 10
+    AbsoluteMaxBytes: 99 MB
+    PreferredMaxBytes: 512 KB
+  Kafka:
+    Brokers: 
+      - 127.0.0.1:9092
+
+  Organizations:
+
+# Application
+
+Application: &ApplicationDefaults
+
+  Organizations:
+
+# Capabilities
+
+Capabilities:
+    Global: &ChannelCapabilities
+        V1_1: true
+    Orderer: &OrdererCapabilities
+        V1_1: true
+    Application: &ApplicationCapabilities
+        V1_1: true
+
+# Profiles
+
+Profiles:
+    OrdererGenesis:
+      Capabilities:
+        <<: *ChannelCapabilities
+      Orderer:
+        <<: *OrdererDefaults
+        Organizations:
+          - *OrdererOrg
+        Capabilities:
+          <<: *OrdererCapabilities
+      Consortiums:
+        MyFirstConsortium:
+          Organizations:
+            - *Microsoft
+            - *IBM
+            - *Apple
+    channelthreeorgs:
+      Consortium: MyFirstConsortium
+      Application:
+        <<: *ApplicationDefaults
+        Organizations:
+          - *Microsoft
+          - *IBM
+          - *Apple
+        Capabilities:
+          <<: *ApplicationCapabilities
