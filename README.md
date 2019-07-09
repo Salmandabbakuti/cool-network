@@ -10,7 +10,8 @@ it will generate crypto-config directory in master branch with all required depe
 
 ### Starting with Genesis Block
 
-```../bin/configtxgen -profile OrdererGenesis -outputBlock ./channel-artifacts/genesis.block
+```
+../bin/configtxgen -profile OrdererGenesis -outputBlock ./channel-artifacts/genesis.block
 
 ```
 ### Generating Channel artifacts
