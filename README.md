@@ -22,7 +22,9 @@ it will generate crypto-config directory in master branch with all required depe
 ### Creating Anchor peer transactions (each command for each organization)
 
 ```
-../bin/configtxgen -profile channelthreeorgs -outputAnchorPeersUpdate ./channel-artifacts/<peer tx file> -channelID channelthreeorgs -asOrg <org MSP>
+../bin/configtxgen -profile channelthreeorgs -outputAnchorPeersUpdate ./channel-artifacts/<peer tx file> -channelID channelthreeorgs -asOrg <org ID>
+
+EX: "../bin/configtxgen -profile channelthreeorgs -outputAnchorPeersUpdate ./channel-artifacts/MicrosoftAnchor.tx -channelID channelthreeorgs -asOrg MicrosoftMSP"
 ```
 
 ### Bringing Network Up and Running
