@@ -28,7 +28,7 @@ Organizations:
     AnchorPeers:
       - Host: peer0.ibm.cool-network.com
         Port: 7051
- - &Google
+  - &Google
     Name: GoogleMSP
     ID: GoogleMSP
     MSPDir: crypto-config/peerOrganizations/google.cool-network.com/msp
@@ -87,7 +87,7 @@ Profiles:
             - *Microsoft
             - *IBM
             - *Apple
-             - *Google
+            - *Google
     channelthreeorgs:
       Consortium: MyFirstConsortium
       Application:
