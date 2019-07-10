@@ -147,3 +147,44 @@ services:
     ports:
       - 12051:7051
       - 12053:7053
+      
+ peer0.google.cool-network.com:
+    container_name: peer0.google.cool-network.com
+    extends:
+      file: peer-base.yaml
+      service: peer-base
+    environment:
+      - CORE_PEER_ID=peer0.google.cool-network.com
+      - CORE_PEER_ADDRESS=peer0.google.cool-network.com:7051
+      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer0.google.cool-network.com:7051
+      - CORE_PEER_GOSSIP_BOOTSTRAP=peer1.google.cool-network.com:7051
+      - CORE_PEER_LOCALMSPID=GoogleMSP
+    volumes:
+        - /var/run/:/host/var/run/
+        - ../crypto-config/peerOrganizations/google.cool-network.com/peers/peer0.google.cool-network.com/msp:/etc/hyperledger/fabric/msp
+        - ../crypto-config/peerOrganizations/google.cool-network.com/peers/peer0.google.cool-network.com/tls:/etc/hyperledger/fabric/tls
+        - peer0.ibm.cool-network.com:/var/hyperledger/production
+    ports:
+      - 13051:7051
+      - 13053:7053
+      
+  peer1.google.cool-network.com:
+    container_name: peer1.google.cool-network.com
+    extends:
+      file: peer-base.yaml
+      service: peer-base
+    environment:
+      - CORE_PEER_ID=peer1.google.cool-network.com
+      - CORE_PEER_ADDRESS=peer1.google.cool-network.com:7051
+      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer1.google.cool-network.com:7051
+      - CORE_PEER_GOSSIP_BOOTSTRAP=peer0.google.cool-network.com:7051
+      - CORE_PEER_LOCALMSPID=GoogleMSP
+    volumes:
+        - /var/run/:/host/var/run/
+        - ../crypto-config/peerOrganizations/google.cool-network.com/peers/peer1.google.cool-network.com/msp:/etc/hyperledger/fabric/msp
+        - ../crypto-config/peerOrganizations/google.cool-network.com/peers/peer1.google.cool-network.com/tls:/etc/hyperledger/fabric/tls
+        - peer0.ibm.cool-network.com:/var/hyperledger/production
+    ports:
+      - 13051:7051
+      - 13053:7053
+
