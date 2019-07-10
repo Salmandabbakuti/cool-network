@@ -163,7 +163,7 @@ services:
         - /var/run/:/host/var/run/
         - ../crypto-config/peerOrganizations/google.cool-network.com/peers/peer0.google.cool-network.com/msp:/etc/hyperledger/fabric/msp
         - ../crypto-config/peerOrganizations/google.cool-network.com/peers/peer0.google.cool-network.com/tls:/etc/hyperledger/fabric/tls
-        - peer0.ibm.cool-network.com:/var/hyperledger/production
+        - peer0.google.cool-network.com:/var/hyperledger/production
     ports:
       - 13051:7051
       - 13053:7053
@@ -183,7 +183,7 @@ services:
         - /var/run/:/host/var/run/
         - ../crypto-config/peerOrganizations/google.cool-network.com/peers/peer1.google.cool-network.com/msp:/etc/hyperledger/fabric/msp
         - ../crypto-config/peerOrganizations/google.cool-network.com/peers/peer1.google.cool-network.com/tls:/etc/hyperledger/fabric/tls
-        - peer0.ibm.cool-network.com:/var/hyperledger/production
+        - peer1.google.cool-network.com:/var/hyperledger/production
     ports:
       - 14051:7051
       - 14053:7053
