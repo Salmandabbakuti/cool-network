@@ -148,7 +148,7 @@ services:
       - 12051:7051
       - 12053:7053
       
- peer0.google.cool-network.com:
+  peer0.google.cool-network.com:
     container_name: peer0.google.cool-network.com
     extends:
       file: peer-base.yaml
