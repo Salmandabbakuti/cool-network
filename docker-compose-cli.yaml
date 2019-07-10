@@ -9,6 +9,8 @@ volumes:
   peer1.apple.cool-network.com:
   peer0.ibm.cool-network.com:
   peer1.ibm.cool-network.com:
+  peer0.google.cool-network.com:
+  peer1.google.cool-network.com:
 
 networks:
   byfn:
@@ -70,6 +72,21 @@ services:
       service: peer1.ibm.cool-network.com
     networks:
       - byfn
+      
+   peer0.google.cool-network.com:
+    container_name: peer0.google.cool-network.com
+    extends:
+      file:  base/docker-compose-base.yaml
+      service: peer0.google.cool-network.com
+    networks:
+      - byfn
+   peer1.google.cool-network.com:
+    container_name: peer1.google.cool-network.com
+    extends:
+      file:  base/docker-compose-base.yaml
+      service: peer1.google.cool-network.com
+    networks:
+      - byfn
 
   cli:
     container_name: cli
@@ -105,5 +122,7 @@ services:
       - peer1.apple.cool-network.com
       - peer0.ibm.cool-network.com
       - peer1.ibm.cool-network.com
+      - peer0.google.cool-network.com
+      - peer1.google.cool-network.com
     networks:
       - byfn

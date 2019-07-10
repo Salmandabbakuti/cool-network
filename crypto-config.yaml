@@ -26,3 +26,10 @@ PeerOrgs:
       Count: 2
     Users:
       Count: 1
+   - Name: Google
+    Domain: google.cool-network.com
+    EnableNodeOUs: true
+    Template:
+      Count: 2
+    Users: 
+      Count: 1
