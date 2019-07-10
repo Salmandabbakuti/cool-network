@@ -32,3 +32,6 @@ EX: "../bin/configtxgen -profile channelthreeorgs -outputAnchorPeersUpdate ./cha
 ```
 docker-compose -f docker-compose-cli.yaml up -d
 ```
+
+### Chaincode Installation and Instantiation
+
