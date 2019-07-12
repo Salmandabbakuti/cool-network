@@ -1,27 +1,35 @@
 OrdererOrgs:
-  - Name: Orderer
-    Domain: example.com
+  - Name: OrderingService
+    Domain: cool-network.com
     Specs:
       - Hostname: orderer
+
 PeerOrgs:
-  - Name: Org1
-    Domain: org1.example.com
+  - Name: Microsoft
+    Domain: microsoft.cool-network.com
     EnableNodeOUs: true
     Template:
+      Count: 2
+    Users: 
       Count: 1
-    Users:
-      Count: 1
-  - Name: Org2
-    Domain: org2.example.com
+  - Name: Apple
+    Domain: apple.cool-network.com
     EnableNodeOUs: true
     Template:
+      Count: 2
+    Users: 
       Count: 1
-    Users:
-      Count: 1
-  - Name: Org3
-    Domain: org3.example.com
+  - Name: IBM
+    Domain: ibm.cool-network.com
     EnableNodeOUs: true
     Template:
-      Count: 1
+      Count: 2
     Users:
+      Count: 1
+  - Name: Google
+    Domain: google.cool-network.com
+    EnableNodeOUs: true
+    Template:
+      Count: 2
+    Users: 
       Count: 1
