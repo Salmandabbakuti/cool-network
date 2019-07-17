@@ -1,4 +1,5 @@
-**Make sure this directory is in master of ```fabric-samples/```directory
+**Make sure this directory is in master of ```fabric-samples/```directory***
+
 ## Generating Certificates and Genesis block
 ```
 ../bin/cryptogen generate --config=./crypto-config.yaml
