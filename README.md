@@ -14,7 +14,7 @@ cd Fabric-Network-Generation
 
 ### Certificates Generation
 
->Note that we are not using first-network template, we are generating our personalized network. using ```crytogen, configtxgen``` tools, we are creating certificates and genesis blocks,channels.
+>Note that we are not using first-network template, we are creating our personalized network with ```crypto-config.yaml and configtxgen.yaml```. using ```cryptogen, configtxgen``` tools, we are creating certificates and genesis blocks,channels.
 
 ```
 ../bin/cryptogen generate --config crypto-config.yaml --output=crypto-config
