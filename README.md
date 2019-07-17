@@ -1,7 +1,20 @@
 # Fabric-Network-Generation
-**Make sure this clone in ```fabric-samples/``` directory**
+
+Install Required Docker images and tools for development
+
+```
+curl -sSL https://goo.gl/6wtTN5 | bash -s 1.1.0
+```
+
+```
+cd fabric-samples
+git clone https://github.com/Salmandabbakuti/Fabric-Network-Generation.git
+cd Fabric-Network-Generation
+```
 
 ### Certificates Generation
+
+>Note that we are not using first-network template, we are generating our personalized network and using ```crytogen, configtxgen``` tools we are creating certificates and genesis blocks,channels.
 
 ```
 ../bin/cryptogen generate --config crypto-config.yaml --output=crypto-config
