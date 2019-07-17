@@ -1,5 +1,5 @@
-# fabric
-**Make sure this clone in ```fabric-samples/``` directory***
+# Fabric-Network-Generation
+**Make sure this clone in ```fabric-samples/``` directory**
 
 ### Certificates Generation
 
