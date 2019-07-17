@@ -3,7 +3,7 @@
 Install Required Docker images and tools for development
 
 ```
-curl -sSL https://goo.gl/6wtTN5 | bash -s 1.1.0
+curl -sSL https://goo.gl/6wtTN5 | bash -s 1.3.0
 ```
 
 ```
