@@ -9,7 +9,7 @@ curl -sSL https://goo.gl/6wtTN5 | bash -s 1.3.0
 ```
 cd fabric-samples
 git clone https://github.com/Salmandabbakuti/fabric-networks.git
-cd Fabric-Network-Generation
+cd fabric-networks
 ```
 
 ### Certificates Generation
