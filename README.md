@@ -1,6 +1,6 @@
 # Fabric-Network-Generation
 
-Install Required Docker images and tools for development
+Install Required Docker images and tools for hyperledger fabric network development
 
 ```
 curl -sSL https://goo.gl/6wtTN5 | bash -s 1.3.0
@@ -8,7 +8,7 @@ curl -sSL https://goo.gl/6wtTN5 | bash -s 1.3.0
 
 ```
 cd fabric-samples
-git clone https://github.com/Salmandabbakuti/Fabric-Network-Generation.git
+git clone https://github.com/Salmandabbakuti/fabric-networks.git
 cd Fabric-Network-Generation
 ```
 
