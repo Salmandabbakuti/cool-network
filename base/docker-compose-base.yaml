@@ -67,6 +67,26 @@ services:
     ports:
       - 8051:7051
       - 8053:7053
+  peer2.microsoft.cool-network.com:
+    container_name: peer2.microsoft.cool-network.com
+    extends:
+      file: peer-base.yaml
+      service: peer-base
+    environment:
+      - CORE_PEER_ID=peer2.microsoft.cool-network.com
+      - CORE_PEER_ADDRESS=peer2.microsoft.cool-network.com:7051
+      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer2.microsoft.cool-network.com:7051
+      - CORE_PEER_GOSSIP_BOOTSTRAP=peer0.microsoft.cool-network.com:7051
+      - CORE_PEER_LOCALMSPID=MicrosoftMSP
+    volumes:
+        - /var/run/:/host/var/run/
+        - ../crypto-config/peerOrganizations/microsoft.cool-network.com/peers/peer2.microsoft.cool-network.com/msp:/etc/hyperledger/fabric/msp
+        - ../crypto-config/peerOrganizations/microsoft.cool-network.com/peers/peer2.microsoft.cool-network.com/tls:/etc/hyperledger/fabric/tls
+        - peer2.microsoft.cool-network.com:/var/hyperledger/production
+
+    ports:
+      - 9051:7051
+      - 9053:7053
 
   peer0.apple.cool-network.com:
     container_name: peer0.apple.cool-network.com
@@ -85,8 +105,8 @@ services:
         - ../crypto-config/peerOrganizations/apple.cool-network.com/peers/peer0.apple.cool-network.com/tls:/etc/hyperledger/fabric/tls
         - peer0.apple.cool-network.com:/var/hyperledger/production
     ports:
-      - 9051:7051
-      - 9053:7053
+      - 10051:7051
+      - 10053:7053
 
   peer1.apple.cool-network.com:
     container_name: peer1.apple.cool-network.com
@@ -105,86 +125,25 @@ services:
         - ../crypto-config/peerOrganizations/apple.cool-network.com/peers/peer1.apple.cool-network.com/tls:/etc/hyperledger/fabric/tls
         - peer1.apple.cool-network.com:/var/hyperledger/production
     ports:
-      - 10051:7051
-      - 10053:7053
-
-  peer0.ibm.cool-network.com:
-    container_name: peer0.ibm.cool-network.com
-    extends:
-      file: peer-base.yaml
-      service: peer-base
-    environment:
-      - CORE_PEER_ID=peer0.ibm.cool-network.com
-      - CORE_PEER_ADDRESS=peer0.ibm.cool-network.com:7051
-      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer0.ibm.cool-network.com:7051
-      - CORE_PEER_GOSSIP_BOOTSTRAP=peer1.ibm.cool-network.com:7051
-      - CORE_PEER_LOCALMSPID=IBMMSP
-    volumes:
-        - /var/run/:/host/var/run/
-        - ../crypto-config/peerOrganizations/ibm.cool-network.com/peers/peer0.ibm.cool-network.com/msp:/etc/hyperledger/fabric/msp
-        - ../crypto-config/peerOrganizations/ibm.cool-network.com/peers/peer0.ibm.cool-network.com/tls:/etc/hyperledger/fabric/tls
-        - peer0.ibm.cool-network.com:/var/hyperledger/production
-    ports:
       - 11051:7051
       - 11053:7053
-
-  peer1.ibm.cool-network.com:
-    container_name: peer1.ibm.cool-network.com
+    
+  peer2.apple.cool-network.com:
+    container_name: peer2.apple.cool-network.com
     extends:
       file: peer-base.yaml
       service: peer-base
     environment:
-      - CORE_PEER_ID=peer1.ibm.cool-network.com
-      - CORE_PEER_ADDRESS=peer1.ibm.cool-network.com:7051
-      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer1.ibm.cool-network.com:7051
-      - CORE_PEER_GOSSIP_BOOTSTRAP=peer0.ibm.cool-network.com:7051
-      - CORE_PEER_LOCALMSPID=IBMMSP
+      - CORE_PEER_ID=peer2.apple.cool-network.com
+      - CORE_PEER_ADDRESS=peer2.apple.cool-network.com:7051
+      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer2.apple.cool-network.com:7051
+      - CORE_PEER_GOSSIP_BOOTSTRAP=peer0.apple.cool-network.com:7051
+      - CORE_PEER_LOCALMSPID=AppleMSP
     volumes:
         - /var/run/:/host/var/run/
-        - ../crypto-config/peerOrganizations/ibm.cool-network.com/peers/peer1.ibm.cool-network.com/msp:/etc/hyperledger/fabric/msp
-        - ../crypto-config/peerOrganizations/ibm.cool-network.com/peers/peer1.ibm.cool-network.com/tls:/etc/hyperledger/fabric/tls
-        - peer1.ibm.cool-network.com:/var/hyperledger/production
+        - ../crypto-config/peerOrganizations/apple.cool-network.com/peers/peer1.apple.cool-network.com/msp:/etc/hyperledger/fabric/msp
+        - ../crypto-config/peerOrganizations/apple.cool-network.com/peers/peer1.apple.cool-network.com/tls:/etc/hyperledger/fabric/tls
+        - peer2.apple.cool-network.com:/var/hyperledger/production
     ports:
       - 12051:7051
       - 12053:7053
-      
-  peer0.google.cool-network.com:
-    container_name: peer0.google.cool-network.com
-    extends:
-      file: peer-base.yaml
-      service: peer-base
-    environment:
-      - CORE_PEER_ID=peer0.google.cool-network.com
-      - CORE_PEER_ADDRESS=peer0.google.cool-network.com:7051
-      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer0.google.cool-network.com:7051
-      - CORE_PEER_GOSSIP_BOOTSTRAP=peer1.google.cool-network.com:7051
-      - CORE_PEER_LOCALMSPID=GoogleMSP
-    volumes:
-        - /var/run/:/host/var/run/
-        - ../crypto-config/peerOrganizations/google.cool-network.com/peers/peer0.google.cool-network.com/msp:/etc/hyperledger/fabric/msp
-        - ../crypto-config/peerOrganizations/google.cool-network.com/peers/peer0.google.cool-network.com/tls:/etc/hyperledger/fabric/tls
-        - peer0.google.cool-network.com:/var/hyperledger/production
-    ports:
-      - 13051:7051
-      - 13053:7053
-      
-  peer1.google.cool-network.com:
-    container_name: peer1.google.cool-network.com
-    extends:
-      file: peer-base.yaml
-      service: peer-base
-    environment:
-      - CORE_PEER_ID=peer1.google.cool-network.com
-      - CORE_PEER_ADDRESS=peer1.google.cool-network.com:7051
-      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer1.google.cool-network.com:7051
-      - CORE_PEER_GOSSIP_BOOTSTRAP=peer0.google.cool-network.com:7051
-      - CORE_PEER_LOCALMSPID=GoogleMSP
-    volumes:
-        - /var/run/:/host/var/run/
-        - ../crypto-config/peerOrganizations/google.cool-network.com/peers/peer1.google.cool-network.com/msp:/etc/hyperledger/fabric/msp
-        - ../crypto-config/peerOrganizations/google.cool-network.com/peers/peer1.google.cool-network.com/tls:/etc/hyperledger/fabric/tls
-        - peer1.google.cool-network.com:/var/hyperledger/production
-    ports:
-      - 14051:7051
-      - 14053:7053
-
