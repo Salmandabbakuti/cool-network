@@ -42,6 +42,7 @@ services:
       - CORE_PEER_LOCALMSPID=MicrosoftMSP
     volumes:
         - /var/run/:/host/var/run/
+        - ../channel-artifacts:/opt/gopath/src/github.com/hyperledger/fabric/peer/channel-artifacts
         - ../crypto-config:/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/
         - ../crypto-config/peerOrganizations/microsoft.cool-network.com/peers/peer0.microsoft.cool-network.com/msp:/etc/hyperledger/fabric/msp
         - ../crypto-config/peerOrganizations/microsoft.cool-network.com/peers/peer0.microsoft.cool-network.com/tls:/etc/hyperledger/fabric/tls
