@@ -57,7 +57,7 @@ services:
       service: peer-base
     environment:
       - CORE_PEER_MSPCONFIGPATH=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/microsoft.cool-network.com/users/Admin@microsoft.cool-network.com/msp
-      - CORE_PEER_TLS_ROOTCERT_FILE=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/microsof.cool-network.com/peers/peer1.microsoft.cool-network.com/tls/ca.crt
+      - CORE_PEER_TLS_ROOTCERT_FILE=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/microsoft.cool-network.com/peers/peer1.microsoft.cool-network.com/tls/ca.crt
       - CORE_PEER_ID=peer1.microsoft.cool-network.com
       - CORE_PEER_ADDRESS=peer1.microsoft.cool-network.com:7051
       - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer1.microsoft.cool-network.com:7051
