@@ -15,20 +15,23 @@ echo "Which peer You wanted To Switch CLI Container??"
 read input
 if [ $input == "M1"]; then
         echo "Setting Up CLI for Microsoft Peer1"
-
+fi
 sudo docker exec -e "CORE_PEER_MSPCONFIGPATH=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/microsoft.cool-network.com/users/Admin@microsoft.cool-network.com/msp" -e "CORE_PEER_TLS_ROOTCERT_FILE=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/microsoft.cool-network.com/peers/peer1.microsoft.cool-network.com/tls/ca.crt" -e "CORE_PEER_ADDRESS=peer1.microsoft.cool-network.com:7051" -e "CORE_PEER_LOCALMSPID=MicrosoftMSP" cli
 if [ $input == "M2"]; then
  
        echo "Setting Up CLI for Microsoft Peer2"
+fi
 sudo docker exec -e "CORE_PEER_MSPCONFIGPATH=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/microsoft.cool-network.com/users/Admin@microsoft.cool-network.com/msp" -e "CORE_PEER_TLS_ROOTCERT_FILE=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/microsoft.cool-network.com/peers/peer2.microsoft.cool-network.com/tls/ca.crt" -e "CORE_PEER_ADDRESS=peer2.microsoft.cool-network.com:7051" -e "CORE_PEER_LOCALMSPID=MicrosoftMSP" cli
 
 
 if [ $input == "A0"]; then
         echo "Setting Up CLI for Apple Peer0"
+fi
 sudo docker exec -e "CORE_PEER_MSPCONFIGPATH=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/apple.cool-network.com/users/Admin@apple.cool-network.com/msp" -e "CORE_PEER_TLS_ROOTCERT_FILE=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/apple.cool-network.com/peers/peer0.apple.cool-network.com/tls/ca.crt" -e "CORE_PEER_ADDRESS=peer0.apple.cool-network.com:7051" -e "CORE_PEER_LOCALMSPID=AppleMSP" cli
 
 if [ $input == "A1"]; then
         echo "Setting Up CLI for Apple Peer1"
+fi
 sudo docker exec -e "CORE_PEER_MSPCONFIGPATH=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/apple.cool-network.com/users/Admin@apple.cool-network.com/msp" -e "CORE_PEER_TLS_ROOTCERT_FILE=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/apple.cool-network.com/peers/peer1.apple.cool-network.com/tls/ca.crt" -e "CORE_PEER_ADDRESS=peer1.apple.cool-network.com:7051" -e "CORE_PEER_LOCALMSPID=AppleMSP" cli
 
 if [ $input == "A2"]; then
@@ -36,7 +39,7 @@ if [ $input == "A2"]; then
 
 sudo docker exec -e "CORE_PEER_MSPCONFIGPATH=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/apple.cool-network.com/users/Admin@apple.cool-network.com/msp" -e "CORE_PEER_TLS_ROOTCERT_FILE=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/apple.cool-network.com/peers/peer2.apple.cool-network.com/tls/ca.crt" -e "CORE_PEER_ADDRESS=peer2.apple.cool-network.com:7051" -e "CORE_PEER_LOCALMSPID=AppleMSP" cli
 
-
+fi
 if [ $input == "M0"]; then
         echo "Setting Up CLI for Microsoft Peer0"
  
