@@ -141,8 +141,8 @@ services:
       - CORE_PEER_LOCALMSPID=AppleMSP
     volumes:
         - /var/run/:/host/var/run/
-        - ../crypto-config/peerOrganizations/apple.cool-network.com/peers/peer1.apple.cool-network.com/msp:/etc/hyperledger/fabric/msp
-        - ../crypto-config/peerOrganizations/apple.cool-network.com/peers/peer1.apple.cool-network.com/tls:/etc/hyperledger/fabric/tls
+        - ../crypto-config/peerOrganizations/apple.cool-network.com/peers/peer2.apple.cool-network.com/msp:/etc/hyperledger/fabric/msp
+        - ../crypto-config/peerOrganizations/apple.cool-network.com/peers/peer2.apple.cool-network.com/tls:/etc/hyperledger/fabric/tls
         - peer2.apple.cool-network.com:/var/hyperledger/production
     ports:
       - 12051:7051
