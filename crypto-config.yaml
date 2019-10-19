@@ -9,7 +9,7 @@ PeerOrgs:
     Domain: microsoft.cool-network.com
     EnableNodeOUs: true
     Template:
-      Count: 2
+      Count: 3
     Users: 
       Count: 1
   - Name: Apple
@@ -18,18 +18,4 @@ PeerOrgs:
     Template:
       Count: 2
     Users: 
-      Count: 1
-  - Name: IBM
-    Domain: ibm.cool-network.com
-    EnableNodeOUs: true
-    Template:
-      Count: 2
-    Users:
-      Count: 1
-  - Name: Google
-    Domain: google.cool-network.com
-    EnableNodeOUs: true
-    Template:
-      Count: 2
-    Users: 
-      Count: 1
+      Count: 3
