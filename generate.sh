@@ -15,7 +15,7 @@ sleep 5
 echo 'Updating Anchor Peers for Channel..'
 
 configtxgen -profile channelAll -outputAnchorPeersUpdate ./channel-artifacts/MicrosoftAnchor.tx -channelID publicChannel -asOrg MicrosoftMSP
-configtxgen -profile channelAll -outputAnchorPeersUpdate ./channel-artifacts/GoogleAnchor.tx -channelID publicChannel -asOrg GoogleMSP
+configtxgen -profile channelAll -outputAnchorPeersUpdate ./channel-artifacts/AppleAnchor.tx -channelID publicChannel -asOrg AppleMSP
 
 echo 'All Done..'
 exit 1
