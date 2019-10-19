@@ -29,12 +29,12 @@ sudo docker exec -e "CORE_PEER_MSPCONFIGPATH=/opt/gopath/src/github.com/hyperled
 
 if [[ $input == "A1"]]; then
         echo "Setting Up CLI for Apple Peer1"
-sudo docker exec -e "CORE_PEER_MSPCONFIGPATH=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/apple.cool-network.com/users/Admin@apple.cool-network.com/msp" -e "CORE_PEER_TLS_ROOTCERT_FILE=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/apple.cool-network.com/peers/peer1.apple.cool-network.com/tls/ca.crt" -e "CORE_PEER_ADDRESS=peer2.apple.cool-network.com:7051" -e "CORE_PEER_LOCALMSPID=AppleMSP" cli
+sudo docker exec -e "CORE_PEER_MSPCONFIGPATH=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/apple.cool-network.com/users/Admin@apple.cool-network.com/msp" -e "CORE_PEER_TLS_ROOTCERT_FILE=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/apple.cool-network.com/peers/peer1.apple.cool-network.com/tls/ca.crt" -e "CORE_PEER_ADDRESS=peer1.apple.cool-network.com:7051" -e "CORE_PEER_LOCALMSPID=AppleMSP" cli
 
 if [[ $input == "A2"]]; then
         echo "Setting Up CLI for Apple Peer2"
 
-sudo docker exec -e "CORE_PEER_MSPCONFIGPATH=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/apple.cool-network.com/users/Admin@apple.cool-network.com/msp" -e "CORE_PEER_TLS_ROOTCERT_FILE=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/apple.cool-network.com/peers/peer2.apple.cool-network.com/tls/ca.crt" -e "CORE_PEER_ADDRESS=peer0.apple.cool-network.com:7051" -e "CORE_PEER_LOCALMSPID=AppleMSP" cli
+sudo docker exec -e "CORE_PEER_MSPCONFIGPATH=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/apple.cool-network.com/users/Admin@apple.cool-network.com/msp" -e "CORE_PEER_TLS_ROOTCERT_FILE=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/apple.cool-network.com/peers/peer2.apple.cool-network.com/tls/ca.crt" -e "CORE_PEER_ADDRESS=peer2.apple.cool-network.com:7051" -e "CORE_PEER_LOCALMSPID=AppleMSP" cli
 
 
 if [[ $input == "M0"]]; then
