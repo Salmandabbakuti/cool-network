@@ -102,11 +102,9 @@ services:
       - orderer.cool-network.com
       - peer0.microsoft.cool-network.com
       - peer1.microsoft.cool-network.com
+      - peer2.microsoft.cool-network.com
       - peer0.apple.cool-network.com
       - peer1.apple.cool-network.com
-      - peer0.ibm.cool-network.com
-      - peer1.ibm.cool-network.com
-      - peer0.google.cool-network.com
-      - peer1.google.cool-network.com
+      - peer2.apple.cool-network.com
     networks:
       - byfn
