@@ -42,6 +42,7 @@ services:
       - CORE_PEER_LOCALMSPID=MicrosoftMSP
     volumes:
         - /var/run/:/host/var/run/
+        - ./crypto-config:/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/
         - ../crypto-config/peerOrganizations/microsoft.cool-network.com/peers/peer0.microsoft.cool-network.com/msp:/etc/hyperledger/fabric/msp
         - ../crypto-config/peerOrganizations/microsoft.cool-network.com/peers/peer0.microsoft.cool-network.com/tls:/etc/hyperledger/fabric/tls
         - peer0.microsoft.cool-network.com:/var/hyperledger/production
@@ -64,6 +65,7 @@ services:
       - CORE_PEER_LOCALMSPID=MicrosoftMSP
     volumes:
         - /var/run/:/host/var/run/
+        - ./crypto-config:/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/
         - ../crypto-config/peerOrganizations/microsoft.cool-network.com/peers/peer1.microsoft.cool-network.com/msp:/etc/hyperledger/fabric/msp
         - ../crypto-config/peerOrganizations/microsoft.cool-network.com/peers/peer1.microsoft.cool-network.com/tls:/etc/hyperledger/fabric/tls
         - peer1.microsoft.cool-network.com:/var/hyperledger/production
@@ -86,6 +88,7 @@ services:
       - CORE_PEER_LOCALMSPID=MicrosoftMSP
     volumes:
         - /var/run/:/host/var/run/
+        - ./crypto-config:/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/
         - ../crypto-config/peerOrganizations/microsoft.cool-network.com/peers/peer2.microsoft.cool-network.com/msp:/etc/hyperledger/fabric/msp
         - ../crypto-config/peerOrganizations/microsoft.cool-network.com/peers/peer2.microsoft.cool-network.com/tls:/etc/hyperledger/fabric/tls
         - peer2.microsoft.cool-network.com:/var/hyperledger/production
@@ -109,6 +112,7 @@ services:
       - CORE_PEER_LOCALMSPID=AppleMSP
     volumes:
         - /var/run/:/host/var/run/
+        - ./crypto-config:/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/
         - ../crypto-config/peerOrganizations/apple.cool-network.com/peers/peer0.apple.cool-network.com/msp:/etc/hyperledger/fabric/msp
         - ../crypto-config/peerOrganizations/apple.cool-network.com/peers/peer0.apple.cool-network.com/tls:/etc/hyperledger/fabric/tls
         - peer0.apple.cool-network.com:/var/hyperledger/production
@@ -131,6 +135,7 @@ services:
       - CORE_PEER_LOCALMSPID=AppleMSP
     volumes:
         - /var/run/:/host/var/run/
+        - ./crypto-config:/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/
         - ../crypto-config/peerOrganizations/apple.cool-network.com/peers/peer1.apple.cool-network.com/msp:/etc/hyperledger/fabric/msp
         - ../crypto-config/peerOrganizations/apple.cool-network.com/peers/peer1.apple.cool-network.com/tls:/etc/hyperledger/fabric/tls
         - peer1.apple.cool-network.com:/var/hyperledger/production
@@ -153,6 +158,7 @@ services:
       - CORE_PEER_LOCALMSPID=AppleMSP
     volumes:
         - /var/run/:/host/var/run/
+        - ./crypto-config:/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/
         - ../crypto-config/peerOrganizations/apple.cool-network.com/peers/peer2.apple.cool-network.com/msp:/etc/hyperledger/fabric/msp
         - ../crypto-config/peerOrganizations/apple.cool-network.com/peers/peer2.apple.cool-network.com/tls:/etc/hyperledger/fabric/tls
         - peer2.apple.cool-network.com:/var/hyperledger/production
