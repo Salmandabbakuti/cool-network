@@ -22,7 +22,7 @@ sudo docker exec -it peer0.microsoft.cool-network.com peer channel join -b mycha
 
 echo 'Exporting channel block to other Peer Containers..'
 
-sudo docker cp cli:/opt/gopath/src/github.com/hyperledger/fabric/peer/mychannel.block .
+sudo docker cp peer0.microsoft.cool-network.com:/opt/gopath/src/github.com/hyperledger/fabric/peer/mychannel.block .
 
 sudo docker cp mychannel.block peer1.microsoft.cool-network.com:/opt/gopath/src/github.com/hyperledger/fabric/peer/mychannel.block
 sudo docker cp mychannel.block peer2.microsoft.cool-network.com:/opt/gopath/src/github.com/hyperledger/fabric/peer/mychannel.block
