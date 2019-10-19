@@ -30,7 +30,7 @@ sudo docker cp mychannel.block peer0.apple.cool-network.com:/opt/gopath/src/gith
 sudo docker cp mychannel.block peer1.apple.cool-network.com:/opt/gopath/src/github.com/hyperledger/fabric/peer/mychannel.block
 sudo docker cp mychannel.block peer2.apple.cool-network.com:/opt/gopath/src/github.com/hyperledger/fabric/peer/mychannel.block
 sleep 5
-echo 'Joing Peers..:
+echo 'Joing Peers..'
 sudo docker exec -it peer1.microsoft.cool-network.com peer channel join -b mychannel.block
 sudo docker exec -it peer2.microsoft.cool-network.com peer channel join -b mychannel.block
 sudo docker exec -it peer0.apple.cool-network.com peer channel join -b mychannel.block
